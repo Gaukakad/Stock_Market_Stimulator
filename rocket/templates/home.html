@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Rocket
+    </title>
+    <link rel="shortcut icon" href="/static/img/logo.png"type="image/x-icon">
+    {% load static %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <script src="{%static 'js/login.js' %}"></script>
+    <script src="{%static 'js/fg.js' %}"></script>
+    {% comment %} <script src="/static/js/login.js"></script>
+    <script src="/static/js/fg.js"></script> {% endcomment %}
+    
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+ <!-- navigation and logo -->
+<div class="nav">
+      <div class="logo">
+        <img src="/static/img/logo.png" alt="logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/rules">Rules</a></li>
+            <li><a href="/feedback">Feedback</a></li>
+            <li><a href="/port">Portfolio</a></li>
+            <li><a href="/transcat">Transcat</a></li>
+            <li><a href="/learn">Learn</a></li>
+            <li><a href="/leaders">Leaders</a></li>
+            <li><a href="/strategies">Strategies</a></li>
+        </ul>
+    </nav>
+    <div class="name">
+        <h1>Rocket</h1>
+        <h4>Stock Market Simulator</h4>
+    </div>      
+</div>
+<!-- Body -->
+<div class="body">
+<div class="container">
+    <!-- <img src="banner2.jpg" alt=""> -->
+    <img src="/static/img/ban.jpg" alt="" srcset="">
+    <button class="btn" onclick="openForm()">Play Now <i class="fa fa-arrow-right"></i></button>
+    
+    
+</div>
+<div class="formc" id="form">
+    <div class="form" id="form1">   
+        <div class="clnbtn">
+            <span onclick="javascript:closeForm()" class="close" title="Close Modal">&times;</span>
+        </div>    
+        <div class="formhead">
+            <h3>Login</h3>
+        </div>
+       
+        <form action="/signin" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="username" placeholder="Enter Your username">
+
+            <input type="passoword" name="pass1" id="pass1" placeholder="Enter Your Password">
+            <div class="fp">
+                <a href="javascript:openFg()">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button> 
+        </form>
+        <div class="signuplink">
+            <p></p>
+            <p>Dont Have An Account? <a href="javascript:signIn()"> Signup</a></p>
+        </div>
+    </div>
+    <div class="fg" id="fg">
+        <div class="clnbtn">
+            <span onclick="javascript:closeForm()" class="close" title="Close Modal">&times;</span>
+        </div>
+        <div class="fgtop">
+            
+            Forgot Password
+            <p>Please enter the email address you used to register to receive the password reset instructions.</p>
+        </div>
+        <form action="">
+            <input type="text" name="" id="" placeholder="Enter Your Email">
+            <button class="btn">Send Now</button>
+        </form>
+    </div>
+    <div class="signin" id="sign">
+        <div class="clnbtn">
+            <span onclick="javascript:closeForm()" class="close" title="Close Modal">&times;</span>
+        </div>
+        <div class="fgtop">
+            Sign up
+            
+        </div>
+        <form action= "/signup" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="username" placeholder="Enter Your username">
+            <input type="text" name="email" id="email" placeholder="Enter Your Email">
+            <input type="password" name="pass1" id="pass1" placeholder="Enter Your passoword">
+            
+            <button class="btn" type="submit">Sign up</button>
+        </form>
+    </div>
+    
+</div>
+{% comment %} how to play {% endcomment %}
+<div class="mega">
+<div class="container2">
+    <h4>How To Play</h4>
+    <ul>
+        <li1><i class="fa fa-arrow-right"> Rocket is an investing simulation game.</i></li1>
+        
+        <li2><i class="fa fa-arrow-right"> You now have Rs 1 crore cash in your portfolio account & a Rs 1 crore intraday trading limit.You can start trading right away!!</i></li2>
+        
+        <li3><i class="fa fa-arrow-right"> With this virtual money you can invest across asset classes like shares, mutual funds and fixed deposits.</i></li3>
+        
+    </ul>
+</div>
+<div class="container3">
+    <h5>Welcome To Rocket Stock Market Simulator</h5>
+    {% if user.is_authenticated %}
+    <h3>Hello {{user}}!</h3>
+    
+    <button type="submit" class="btn"><a href="/signout">SignOut</a></button>
+    {% else %}
+    Login/Signup to start playing
+    <button class="btn" onclick="openForm()">Login/Signup <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+    
+    {% endif %}
+   
+</div>
+</div>
+<div class="container4">
+    <div class="market">
+        <h5>MARKET ACTION </h5>
+        <p>NIFTY50: {{nifty50}} ({{pChange}}%) </p>
+        
+        <p>NIFTY BANK: {{niftybank}} ({{pbank}}%) </p>
+    </div>
+    <div class="global">
+        <h5>TOP GAINERS</h5>
+        <p>{{top}}</p>
+        <p>{{top2}}</p>
+        <p>{{top3}}</p>
+    </div>
+    <div class="toploser">
+        <h5>TOP LOSERS</h5>
+        <p>{{topl1}}</p>
+        <p>{{topl2}}</p>
+        <p>{{topl3}}</p>
+    </div>
+</div>
+<!-- footer -->
+<footer>
+    <div class="foot">
+        Copyright &copy; rocket.com Ltd. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

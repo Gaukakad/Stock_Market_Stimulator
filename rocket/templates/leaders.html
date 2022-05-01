@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Rocket
+    </title>
+    <link rel="shortcut icon" href="/static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/leaders.css">
+    <script src="login.js"></script>
+    <script src="fg.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+ <!-- navigation and logo -->
+ <div class="nav">
+    <div class="logo">
+      <img src="/static/img/logo.png" alt="logo">
+  </div>
+  <nav>
+      <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/rules">Rules</a></li>
+          <li><a href="/feedback">Feedback</a></li>
+          <li><a href="/port">Portfolio</a></li>
+          <li><a href="/transcat">Transcat</a></li>
+          <li><a href="/learn">Learn</a></li>
+          <li><a href="/leaders">Leaders</a></li>
+      </ul>
+  </nav>
+    <div class="name">
+        <h1>Rocket</h1>
+        <h4>Stock Market Simulator</h4>
+    </div>      
+</div>
+<div class="container1">
+    <h1>Leaders</h1>
+    
+</div>
+<div class="container">
+    <table border="5px solid #000;" id="customers">
+        <tbody>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Current Investment Value</th>
+                    
+                </tr>
+
+            </thead>
+        <tbody>
+            {% for i in details  %}
+            <tr>
+                <td style="padding:10px;">{{i.username}}</td>
+                <td style="padding:10px;">{{i.totalmoneyc}}</td>
+                
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

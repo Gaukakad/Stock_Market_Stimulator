@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Rocket
+    </title>
+    <link rel="shortcut icon"  href="/static/img/logo.png" type="image/x-icon">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rules.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+ <!-- navigation and logo -->
+ <div class="nav">
+    <div class="logo">
+      <img src="/static/img/logo.png" alt="logo">
+  </div>
+  <nav>
+      <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/rules">Rules</a></li>
+          <li><a href="/feedback">Feedback</a></li>
+          <li><a href="/port">Portfolio</a></li>
+          <li><a href="/transcat">Transcat</a></li>
+          <li><a href="/learn">Learn</a></li>
+          <li><a href="/leaders">Leaders</a></li>
+      </ul>
+  </nav>
+   <div class="name">
+    <h1>Rocket </h1>
+    <h4>Stock Market Simulator</h4>
+   </div>      
+</div>
+<!-- body -->
+<div class="rulesbody">
+    <h1>Rules</h1>
+    <div class="ruleslist">
+        <h2>How To Play</h2>
+        <ul>
+            <li>You have Rs 1 crore virtual cash for investing in shares, mutual funds, or fixed deposits.</li>
+            <li>You also have an intraday virtual trading limit of Rs 1 crore.</li>
+            <li>You will need to square off your intra-day transaction before the end of the day or it will get automatically squared off at the end of the day. The intraday trading limit will be reset everyday to your Networth</li>
+            <li>All buy and sell transactions cannot exceed the actual volumes in the market.</li>
+            <li>All the rules and regulations pertaining splits and bonuses will be followed.</li>
+            <li>Brokerage charged will differ according to the type of trade executed.</li>
+            <li>You can reset your portfolio to Rs 1 crore anytime you want to.</li>
+            <li>In case of any discrepancy in the orders executed we reserve the right to delete or modify the transactions or even reset the user's portfolio at our sole discretion.</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+<!-- footer -->
+<footer>
+    <div class="foot">
+        Copyright &copy; rocket.com Ltd. All rights reserved.
+    </div>
+</footer>
+</html>

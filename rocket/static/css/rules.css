@@ -1,0 +1,97 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/* Navigation & Logo */
+.nav{
+    background-color: #0f172a;
+    color: white;
+    height: 110px;
+    
+}
+.logo{
+    position: absolute;
+    display: flex;
+    height: 200px;
+    padding: 8px 20px 20px 10px;
+}
+.logo>img{
+    height: 90px;
+}
+.name{
+    width: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    padding: 30px 20px 20px 70px;
+}
+.name>h1{
+    font-size: 20px;
+}
+nav{
+    color: white;
+    display: flex;
+    float: right;
+    flex-direction: column;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 20px;
+}
+nav ul li a{ 
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    padding: 20px;
+}
+
+nav ul li a:hover{
+    text-shadow: 10px;
+    
+    box-shadow:inset;
+    background-color: white;
+    color: black;
+    border-radius: 20px;     
+}
+/* rules body */
+
+.rulesbody{
+    
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color:  #cbd5e1;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 20px;
+    height: 400px;
+}
+.ruleslist h2{
+    color: white;
+    border-radius: 20px;
+    background-color:#0f172a;
+}
+.ruleslist ul li{
+    text-align: left;
+    list-style: symbols();
+    margin: 10px;
+}
+/* footer */
+footer{
+    position: absolute;
+    bottom: 0px;
+    height: 10px;
+    width: 100%;
+} 
+.foot{
+    background-color: #0f172a;
+    text-align: center;
+    color: white;
+    z-index: -1;  
+}
